@@ -1,8 +1,10 @@
 import { createStore, combineReducers } from 'redux'
-import counterReducer from './counterReducer';
+import counterReducer from './counter/counterReducer';
+import sandwichReducer from './sandwich/sandwichReducer';
 
 const store = createStore(combineReducers({
-    counter: counterReducer
+    counter: counterReducer,
+    sandwich: sandwichReducer
 }));
 
 export default store;

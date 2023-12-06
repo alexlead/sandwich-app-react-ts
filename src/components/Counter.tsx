@@ -22,6 +22,8 @@ const Counter: React.FC = (): JSX.Element => {
         <button onClick={()=>handleMinus(1)}>Minus</button>
         <button onClick={()=>handlePlus(1)}>Plus</button>
         <button onClick={()=>handlePlus(10)}>Plus 10</button>
+
+
     </div>
   )
 }
