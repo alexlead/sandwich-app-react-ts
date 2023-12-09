@@ -1,12 +1,11 @@
-import { createStore, combineReducers } from 'redux'
+import { configureStore } from "@reduxjs/toolkit"
+import sandwichSlice from "./sandwich/sandwichSlice";
 
-import sandwichReducer from './sandwich/sandwichReducer';
+export const store = configureStore({
+    reducer: {
+        sandwich: sandwichSlice
+    }
+})
 
-
-const store = createStore(combineReducers({
-    sandwich: sandwichReducer,
-}));
-
-export default store;
-
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch

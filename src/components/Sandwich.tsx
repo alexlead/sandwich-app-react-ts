@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/store'
-import { Ingredient, INGREDIENT_VALUES } from '../redux/sandwich/sandwichActions';
+import { addIngrediant, clearTable, Ingredient, INGREDIENT_VALUES } from '../redux/sandwich/sandwichSlice';
 
 const Sandwich: React.FC = (): JSX.Element => {
 
@@ -9,11 +9,11 @@ const Sandwich: React.FC = (): JSX.Element => {
     const dispatch = useDispatch();
 
     const handleAdd = (comp: Ingredient) => {
-        dispatch({ type: 'sandwich/addIngrediant', payload: comp })
+        dispatch(addIngrediant(comp));
     }
 
     const handleClear = () => {
-        dispatch({ type: 'sandwich/clear' })
+        dispatch(clearTable())
     }
 
     return (

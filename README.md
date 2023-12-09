@@ -1,7 +1,7 @@
 # Sandwich App
 
-- Redux
-- Reducers
+- Redux Toolkit
+- Slice
 - useSelector
 - dispatch
 
