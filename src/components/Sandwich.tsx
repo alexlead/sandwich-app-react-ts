@@ -1,31 +1,57 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/store'
-import { Inggredient } from '../redux/sandwich/sandwichActions';
+import { Ingredient, INGREDIENT_VALUES } from '../redux/sandwich/sandwichActions';
 
 const Sandwich: React.FC = (): JSX.Element => {
 
     const ingredients = useSelector((state: RootState) => state.sandwich.ingredients)
     const dispatch = useDispatch();
 
-    const handleAdd = ( comp: Inggredient ) => {
-        dispatch({type:'sandwich/addIngrediant', payload: comp})
+    const handleAdd = (comp: Ingredient) => {
+        dispatch({ type: 'sandwich/addIngrediant', payload: comp })
     }
 
     const handleClear = () => {
-        dispatch({type: 'sandwich/clear'})
+        dispatch({ type: 'sandwich/clear' })
     }
 
     return (
         <div>
 
-            <h1>Choose your sandwich:</h1>
-            <p>Sandwich: {ingredients}</p>
-            <button onClick={()=>handleAdd('bread')}>Add bread</button>
-            <button onClick={()=>handleAdd('cheese')}>Add cheese</button>
-            <button onClick={()=>handleAdd('butter')}>Add butter</button>
-            <button onClick={()=>handleAdd('salami')}>Add salsmi</button>
-            <button onClick={handleClear}>Delete All</button>
+            <div className="mySandwich">
+
+                <h2>My sandwich</h2>
+                <div >{
+                    ingredients?.split(" ").map((ingredient, index) => (
+                        <div className={"ingredient__spread sandwich " + ingredient} key={index}></div>
+                    ))
+                }</div>
+
+            </div>
+
+            <div className="table">
+
+                <button onClick={handleClear}>Clear table</button>
+
+            </div>
+
+            <div className="ingredients">
+                {
+
+                    INGREDIENT_VALUES?.map((ingredient, index) => (
+                        <div className="ingredient" key={index} onClick={() => handleAdd(ingredient)}>
+                            <div className={"ingredient__spread sandwich " + ingredient}></div>
+                            <div className="ingredient__title">{ingredient}</div>
+                        </div>
+                    ))
+
+                }
+
+            </div>
+
+
+
 
         </div>
     )

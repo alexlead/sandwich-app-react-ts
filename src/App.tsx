@@ -1,12 +1,16 @@
 import React from 'react';
-import Counter from './components/Counter';
 import Sandwich from './components/Sandwich';
 
 function App() {
   return (
     <>
-    <Counter />
-    <Sandwich />
+    <div className="container">
+
+    <div className="row">
+        <Sandwich />
+    </div>
+
+    </div>
     </>
     
   );

@@ -1,0 +1,113 @@
+// colors
+$yellow: #FFF78A;
+$yellow-red: #FFE382;
+$red-yellow: #FFC47E;
+$red: #FFAD84;
+
+// speads
+.sandwich {
+
+    background-image: url("./img/hamburger_spread_160x90.png");
+    background-repeat: no-repeat;
+    background-position: 0 90px;
+    width: 160px;
+    height: 0;
+    cursor: pointer;
+
+    &.bread-top {
+        background-position: 0 0;
+        height: 90px;
+    }
+
+    &.bread-bottom {
+        background-position: 0 -90px;
+        height: 90px;
+    }
+
+    &.steak {
+        height: 90px;
+        background-position: 0 -180px;
+    }
+
+    &.cutlet {
+        height: 90px;
+        background-position: 0 -264px;
+    }
+
+    &.ham {
+        height: 90px;
+        background-position: 0 -350px;
+    }
+
+    &.cheese {
+        height: 90px;
+        background-position: 0 -440px;
+    }
+
+}
+
+// ingredients area 
+
+.ingredients {
+
+    display: flex;
+
+    border: 1px dashed;
+    margin: 30px 0 0 0;
+    padding: 20px 0;
+    justify-content: center;
+
+    .ingredient__title {
+        text-transform: capitalize;
+        text-align-last: center;
+        font-weight: bold;
+    }
+
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+    background: $yellow;
+
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+
+
+}
+
+
+.mySandwich {
+
+
+    >div {
+        background: rgb(255, 247, 138);
+        background: linear-gradient(180deg, rgba(255, 247, 138, 1) 0%, rgba(255, 196, 126, 1) 88%, rgba(255, 173, 132, 1) 100%);
+        border: 1px dashed $red;
+        height: 580px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow-y: auto;
+    }
+
+}
+
+.table {
+
+    button {
+        width: 100%;
+        padding: 5px 0;
+        color: $yellow;
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        background: $red;
+        cursor: pointer;
+    }
+
+}
